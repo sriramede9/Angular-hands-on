@@ -4,23 +4,23 @@
   type="text"
   class="form form-control"
   (input)="onUpdateServerName($event)"
-/>
+/> -->
 
 <input type="text" class="form-control" [(ngModel)]="serverName" />
 
-<p>ng model name is {{ serverName }}</p>
-
-<p>Server Name is {{ serverName }}</p>
+<!-- <p>ng model name is {{ serverName }}</p> -->
 
 <button
   class="btn btn-primary"
-  [disabled]="!allowNewServers"
+  
   (click)="onCreateServer()"
 >
   Add Server
-</button> -->
+</button>
 
 <!-- <p [innerText]="allowNewServers"></p> -->
+
+<p *ngIf="allowNewServers">Here is the created Server {{ serverName }}</p>
 
 <p>solving --- example</p>
 

@@ -13,14 +13,15 @@ export class ServersComponent implements OnInit {
   userName = "";
 
   constructor() {
-    setTimeout(() => {
-      this.allowNewServers = true;
-    }, 2000);
+    // setTimeout(() => {
+    //   this.allowNewServers = true;
+    // }, 2000);
   }
 
   ngOnInit(): void {}
 
   onCreateServer() {
+    this.allowNewServers = true;
     this.serverCreationStatus = "server is created";
   }
 
