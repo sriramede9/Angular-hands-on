@@ -10,33 +10,32 @@
 
 <!-- <p>ng model name is {{ serverName }}</p> -->
 
-<button
-  class="btn btn-primary"
-  
-  (click)="onCreateServer()"
->
+<button class="btn btn-primary" (click)="onCreateServer()">
   Add Server
 </button>
 
 <!-- <p [innerText]="allowNewServers"></p> -->
 
-<p *ngIf="allowNewServers">Here is the created Server {{ serverName }}</p>
+<!-- <p *ngIf="allowNewServers">Here is the created Server {{ serverName }}</p> -->
 
-<p>solving --- example</p>
+<!-- <p>solving --- example</p> -->
 
-<input type="text" class="form form-input" [(ngModel)]="userName" />
+<!-- <input type="text" class="form form-input" [(ngModel)]="userName" />
 
-<br />
+<br /> -->
 
-<button
+<!-- <button
   class="btn btn-primary"
   [disabled]="userName === ''"
   (click)="userName = ''"
 >
   Reset
-</button>
+</button> -->
 
-<p>{{ userName }}</p>
+<!-- <p>{{ userName }}</p> -->
 
-<p>{{ serverCreationStatus }}</p>
+
+
+<p>App -Server module</p>
 <app-server></app-server>
+
