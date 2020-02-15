@@ -15,8 +15,15 @@
 </button>
 
 <!-- <p [innerText]="allowNewServers"></p> -->
+<br />
 
-<!-- <p *ngIf="allowNewServers">Here is the created Server {{ serverName }}</p> -->
+<p *ngIf="allowNewServers">Here is the created Server {{ serverName }}</p>
+
+<p>Available Servers</p>
+
+<li *ngFor="let server of servers">
+  <b> {{ server }} </b>
+</li>
 
 <!-- <p>solving --- example</p> -->
 
@@ -33,9 +40,21 @@
 </button> -->
 
 <!-- <p>{{ userName }}</p> -->
+<br />
 
+<p>It's the challenge</p>
+<button class="btn btn-warning" (click)="toggleP(); logEvents($event)">
+  Display Details
+</button>
 
+<p *ngIf="!showParagrah">paragraph to show</p>
+<div
+  *ngFor="let x of eventlog; let i = index"
+  [ngStyle]="{ backgroundColor: i > 4 ? 'blue' : 'transparent' }"
+  [ngClass]="{ 'white-class': i > 4 }"
+>
+  {{ x }}
+</div>
 
 <p>App -Server module</p>
-<app-server></app-server>
-
+<app-server *ngFor="let server of servers"></app-server>

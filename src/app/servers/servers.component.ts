@@ -3,12 +3,21 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-servers",
   templateUrl: "./servers.component.html",
-  styleUrls: ["./servers.component.css"]
+  styles: [
+    `
+      .white-class {
+        color: white;
+      }
+    `
+  ]
 })
 export class ServersComponent implements OnInit {
   allowNewServers = false;
   serverCreationStatus = "no servers created";
-  serverName = "testS";
+  serverName: string = "testServer";
+  servers: string[] = ["a", "b"];
+  showParagrah: boolean = true;
+  eventlog: object[] = [];
 
   userName = "";
 
@@ -23,10 +32,19 @@ export class ServersComponent implements OnInit {
   onCreateServer() {
     this.allowNewServers = true;
     this.serverCreationStatus = "server is created";
+    this.servers.push(this.serverName);
   }
 
-  onUpdateServerName(event: any) {
-    //console.log(event.target.value);
-    this.serverName = event.target.value;
+  // onUpdateServerName(event: any) {
+  //   //console.log(event.target.value);
+  //   this.serverName = event.target.value;
+  // }
+  toggleP() {
+    this.showParagrah = !this.showParagrah;
+  }
+
+  logEvents(event: any) {
+    this.eventlog.push(event.timeStamp);
+    // console.log(event.timeStamp);
   }
 }
