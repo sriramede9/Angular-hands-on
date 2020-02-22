@@ -6,5 +6,6 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./success-alert.component.css"]
 })
 export class SuccessAlertComponent {
-  @Input() color: string[] ;
+  @Input() color: string[];
+  @Input() element: { name: string; age: number; height: number };
 }
