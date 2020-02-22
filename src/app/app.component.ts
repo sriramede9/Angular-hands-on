@@ -7,5 +7,5 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   name = "Sr!";
+  col: string[] = ["a", "b", "c"];
 }
- 
