@@ -8,5 +8,10 @@ import { Component } from "@angular/core";
 export class AppComponent {
   name = "Sr!";
   col: string[] = ["a", "b", "c"];
-  ele: {} = { name: "jaffa", age: 23, height: 23 };
+  ele: {} = { name: "jaffar", age: 23, height: 23 };
+  testName: string;
+
+  exampleTestName($event) {
+    this.testName = $event;
+  }
 }

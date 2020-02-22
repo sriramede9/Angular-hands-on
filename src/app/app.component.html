@@ -3,8 +3,11 @@
     <div class="col-xs-12">
       <h2>Hi Sri we are in the App-Component</h2>
       <hr />
+      <h1>{{ testName }} is our test name</h1>
       <app-servers> </app-servers>
-      <app-success-alert [element]="ele"></app-success-alert>
+      <app-success-alert
+        (exampleOutput)="exampleTestName($event)"
+      ></app-success-alert>
     </div>
   </div>
 </div>
