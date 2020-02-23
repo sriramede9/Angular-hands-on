@@ -1,10 +1,17 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ViewEncapsulation
+} from "@angular/core";
 //import { EventEmitter } from "protractor";
 
 @Component({
   selector: "app-success-alert",
   templateUrl: "./success-alert.component.html",
-  styleUrls: ["./success-alert.component.css"]
+  styleUrls: ["./success-alert.component.css"],
+  encapsulation: ViewEncapsulation.Emulated //emulated,none,native while none globally,emulated default
 })
 export class SuccessAlertComponent {
   @Input() color: string[];

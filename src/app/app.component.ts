@@ -11,7 +11,7 @@ export class AppComponent {
   ele: {} = { name: "jaffar", age: 23, height: 23 };
   testName: string;
 
-  exampleTestName($event) {
-    this.testName = $event;
+  exampleTestName(fromEvent: string) {
+    this.testName = fromEvent;
   }
 }
