@@ -5,9 +5,11 @@
       <hr />
       <h1>{{ testName }} is our test name</h1>
       <app-servers> </app-servers>
-      <app-success-alert
+      <!-- <app-success-alert
         (exampleOutput)="exampleTestName($event)"
-      ></app-success-alert>
+      ></app-success-alert> -->
+<app-success-alert *ngFor="let se of serverElements"></app-success-alert>
+
     </div>
   </div>
 </div>

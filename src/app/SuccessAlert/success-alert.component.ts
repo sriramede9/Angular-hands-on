@@ -21,8 +21,21 @@ export class SuccessAlertComponent {
 
   servName: string;
 
+  //  serverElements: Array<{ type: string; name: string; content: string }> = [];
+  newServername: string;
+  newServerContent: string;
+
   onClickNotify() {
     this.servName = "Hello from child!!!";
     this.exampleOutput.emit(this.servName);
+  }
+
+  onClickAddServer() {
+    //create an array and push data to it [serverElements].
+    // this.serverElements.push({
+    //   type: "server",
+    //   name: this.newServername,
+    //   content: this.newServerContent
+    // });
   }
 }
