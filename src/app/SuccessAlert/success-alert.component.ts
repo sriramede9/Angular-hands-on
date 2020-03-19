@@ -21,7 +21,8 @@ export class SuccessAlertComponent {
 
   servName: string;
 
-  //  serverElements: Array<{ type: string; name: string; content: string }> = [];
+  @Input()  elementone: { type: string; name: string; content: string };
+
   newServername: string;
   newServerContent: string;
 
