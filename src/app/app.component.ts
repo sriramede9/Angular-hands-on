@@ -17,15 +17,37 @@ export class AppComponent {
 
   testName: string;
 
-  //serverElements: Array<{ type: string; name: string; content: string }> = [];
-
-  serverElements: [
-    {
-      type: "server";
-      name: "Kiara";
-      content: "test the content";
-    }
+  serverElements: Array<{ type: string; name: string; content: string }> = [
+    { type: "server", name: "Kiera", content: "test content of kiara" }
   ];
+
+  // serverElements: [
+  //   {
+  //     type: "server";
+  //     name: "Kiara";
+  //     content: "test the content";
+  //   }
+  // ];
+
+  onClickAddServer(serverData: { serverName: string; serverContent: string }) {
+    //create an array and push data to it [serverElements].
+    this.serverElements.push({
+      type: "server",
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
+  }
+  onClickAddblueprint(serverData: {
+    serverName: string;
+    serverContent: string;
+  }) {
+    //create an array and push data to it [serverElements].
+    this.serverElements.push({
+      type: "blueprint",
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
+  }
 
   exampleTestName(fromEvent: string) {
     this.testName = fromEvent;

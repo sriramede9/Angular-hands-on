@@ -8,7 +8,20 @@
       <!-- <app-success-alert
         (exampleOutput)="exampleTestName($event)"
       ></app-success-alert> -->
-      <app-success-alert [elementone]="ele"></app-success-alert>
+      <app-success-alert
+        *ngFor="let se of serverElements"
+        [elementone]="se"
+      ></app-success-alert>
+
+      <app-warning-alert
+        (serverCreated)="onClickAddServer($event)"
+        (blueprintCreated)="onClickAddblueprint($event)"
+      ></app-warning-alert>
+
+      <li *ngFor="let se of serverElements">
+        <b> {{ se.name }} </b>
+        <b> {{ se.type }} </b>
+      </li>
     </div>
   </div>
 </div>

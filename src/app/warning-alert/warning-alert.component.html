@@ -1,1 +1,17 @@
-<h2>warning-alert works with success alert!</h2>
+<h2>warning-alert works !</h2>
+
+<p>enter Server Name</p>
+<input type="text" class="form-control" [(ngModel)]="newServername" />
+
+<p>enter Server Content</p>
+<input type="text" class="form-control" [(ngModel)]="newServerContent" />
+
+<!-- <button class="btn-primary" (click)="onClickNotify()">Add to Parent</button> -->
+
+<button class="btn-primary" (click)="onClickAddServer()">
+  Add to Server
+</button>
+<br />
+<button class="btn-primary" (click)="onClickAddblueprint()">
+  Add to blueprint
+</button>
