@@ -12,6 +12,7 @@ export class WarningAlertComponent implements OnInit {
 
   newServername: string;
   newServerContent: string;
+  testName: string;
 
   @Output() serverCreated = new EventEmitter<{
     serverName: string;
@@ -21,6 +22,12 @@ export class WarningAlertComponent implements OnInit {
   @Output() blueprintCreated = new EventEmitter<{
     serverName: string;
     serverContent: string;
+  }>();
+
+  @Output() test = new EventEmitter<{
+    name: string;
+    age: number;
+    height: number;
   }>();
 
   onClickAddServer() {
@@ -37,5 +44,8 @@ export class WarningAlertComponent implements OnInit {
       serverName: this.newServername,
       serverContent: this.newServerContent
     });
+  }
+  onClickAddTestName() {
+    this.test.emit({ name: this.testName, age: 23, height: 6 });
   }
 }

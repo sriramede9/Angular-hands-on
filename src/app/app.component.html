@@ -16,6 +16,7 @@
       <app-warning-alert
         (serverCreated)="onClickAddServer($event)"
         (blueprintCreated)="onClickAddblueprint($event)"
+        (test)="onClickTest($event)"
       ></app-warning-alert>
 
       <li *ngFor="let se of serverElements">
