@@ -3,7 +3,9 @@ import {
   OnInit,
   EventEmitter,
   Output,
-  ViewEncapsulation
+  ViewEncapsulation,
+  ViewChild,
+  ElementRef
 } from "@angular/core";
 
 @Component({
@@ -20,6 +22,8 @@ export class WarningAlertComponent implements OnInit {
   newServername: string;
   newServerContent: string;
   testName: string;
+
+  @ViewChild("testInput") testDataInput: ElementRef;
 
   @Output() serverCreated = new EventEmitter<{
     serverName: string;
@@ -57,6 +61,7 @@ export class WarningAlertComponent implements OnInit {
   }
 
   onClickAddTest() {
-    this.test.emit({ name: this.testName, age: 23, height: 6 });
+    // this.test.emit({ name: this.testName, age: 23, height: 6 });
+    console.log(this.testDataInput.nativeElement.value);
   }
 }

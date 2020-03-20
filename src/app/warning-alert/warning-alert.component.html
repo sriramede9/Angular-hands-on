@@ -14,17 +14,27 @@
 
 <!-- <input type="text" class="form-control" [(ngModel)]="newServername" /> -->
 
-<button class="btn-primary" (click)="onClickAddServer(newServerName,newServerContent)">
+<button
+  class="btn-primary"
+  (click)="onClickAddServer(newServerName, newServerContent)"
+>
   Add to Server
 </button>
 
-<button class="btn-primary" (click)="onClickAddblueprint(newServerContent,newServerName)">
+<button
+  class="btn-primary"
+  (click)="onClickAddblueprint(newServerContent, newServerName)"
+>
   Add to Blueprint
 </button>
 <br />
 
 <!-- <h2>{{ newServerName.value }} is the value I get by local reference</h2> -->
 <br />
-<p>enter test Name</p>
+<!-- <p>enter test Name</p>
 <input type="text" class="form-control" [(ngModel)]="testName" />
+<button class="btn-primary" (click)="onClickAddTest()">add to test</button> -->
+
+<p>testing view Child</p>
+<input type="text" class="form-control" #testInput />
 <button class="btn-primary" (click)="onClickAddTest()">add to test</button>
