@@ -37,21 +37,22 @@ export class WarningAlertComponent implements OnInit {
     height: number;
   }>();
 
-  onClickAddServer(nameInput) {
+  onClickAddServer(nameInput, contentInput) {
     //create an array and push data to it [serverElements].
     //console.log(nameInput.value);
     this.serverCreated.emit({
       // serverName: this.newServername,
       serverName: nameInput.value,
-      serverContent: this.newServerContent
+      serverContent: contentInput.value
     });
   }
 
-  onClickAddblueprint() {
+  onClickAddblueprint(contentInput, nameInput) {
     //create an array and push data to it [serverElements].
     this.blueprintCreated.emit({
-      serverName: this.newServername,
-      serverContent: this.newServerContent
+      serverName: nameInput.value,
+      // serverContent: this.newServerContent
+      serverContent: contentInput.value
     });
   }
 
