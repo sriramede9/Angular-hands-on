@@ -13,16 +13,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">{{ elementone.name }}</div>
   <div class="panel-body">
-    <p>
-      <strong *ngIf="elementone.type === 'server'" style="color: tomato">{{
-        elementone.content
-      }}</strong>
-    </p>
-    <p>
-      <em *ngIf="elementone.type === 'blueprint'" style="color:yellow">{{
-        elementone.content
-      }}</em>
-    </p>
+    <ng-content></ng-content>
 
     <p>
       <strong

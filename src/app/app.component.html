@@ -12,7 +12,18 @@
         *ngFor="let se of serverElements"
         [elementone]="se"
         [getFromParent]="name"
-      ></app-success-alert>
+      >
+        <p>
+          <strong *ngIf="se.type === 'server'" style="color: tomato">{{
+            se.content
+          }}</strong>
+        </p>
+        <p>
+          <em *ngIf="se.type === 'blueprint'" style="color:yellow">{{
+            se.content
+          }}</em>
+        </p>
+      </app-success-alert>
 
       <app-warning-alert
         (serverCreated)="onClickAddServer($event)"
