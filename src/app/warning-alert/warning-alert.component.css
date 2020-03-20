@@ -2,3 +2,7 @@ h2 {
   color: tomato;
   border-bottom: 2em;
 }
+p {
+  color: springgreen;
+  text-decoration-style: solid;
+}

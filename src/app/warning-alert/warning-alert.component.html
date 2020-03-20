@@ -1,25 +1,21 @@
 <h2>warning-alert works !</h2>
 
-<p>enter Server Name</p>
-<input type="text" class="form-control" [(ngModel)]="newServername" />
-
 <p>enter Server Content</p>
 <input type="text" class="form-control" [(ngModel)]="newServerContent" />
 
 <!-- <button class="btn-primary" (click)="onClickNotify()">Add to Parent</button> -->
 
-<button class="btn-primary" (click)="onClickAddServer()">
+<p>enter Server Name</p>
+<input type="text" class="form-control" #newServerName />
+
+<!-- <input type="text" class="form-control" [(ngModel)]="newServername" /> -->
+
+<button class="btn-primary" (click)="onClickAddServer(newServerName)">
   Add to Server
 </button>
 <br />
-<button class="btn-primary" (click)="onClickAddblueprint()">
-  Add to blueprint
-</button>
+<h2>{{ newServerName.value }} is the value I get by local reference</h2>
 <br />
-
-<p>enter Test Name</p>
+<p>enter test Name</p>
 <input type="text" class="form-control" [(ngModel)]="testName" />
-
-<button class="btn-primary" (click)="onClickAddTestName()">
-  Add to TestName
-</button>
+<button class="btn-primary" (click)="onClickAddTest()">add to test</button>

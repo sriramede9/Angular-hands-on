@@ -1,3 +1,11 @@
 h2 {
   color: aqua;
 }
+h1 {
+  color: yellowgreen;
+}
+
+p {
+  color: steelblue;
+  text-decoration: solid;
+}

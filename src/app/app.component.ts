@@ -49,11 +49,7 @@ export class AppComponent {
     });
   }
 
-  onClickTest(testData: { name: string; age: number; height: number }) {
+  onClickAddTest(testData: { name: string; age: number; height: number }) {
     this.testName = testData.name;
-  }
-
-  exampleTestName(fromEvent: string) {
-    this.testName = fromEvent;
   }
 }

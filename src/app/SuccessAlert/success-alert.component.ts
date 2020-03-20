@@ -23,7 +23,7 @@ export class SuccessAlertComponent {
 
   @Input() elementone: { type: string; name: string; content: string };
 
- 
+  @Input() getFromParent: string;
 
   onClickNotify() {
     this.servName = "Hello from child!!!";

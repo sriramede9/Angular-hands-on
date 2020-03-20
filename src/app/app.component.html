@@ -11,12 +11,13 @@
       <app-success-alert
         *ngFor="let se of serverElements"
         [elementone]="se"
+        [getFromParent]="name"
       ></app-success-alert>
 
       <app-warning-alert
         (serverCreated)="onClickAddServer($event)"
         (blueprintCreated)="onClickAddblueprint($event)"
-        (test)="onClickTest($event)"
+        (test)="onClickAddTest($event)"
       ></app-warning-alert>
 
       <li *ngFor="let se of serverElements">

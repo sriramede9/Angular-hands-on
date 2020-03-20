@@ -1,9 +1,16 @@
-import { Component, OnInit, EventEmitter, Output } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  EventEmitter,
+  Output,
+  ViewEncapsulation
+} from "@angular/core";
 
 @Component({
   selector: "app-warning-alert",
   templateUrl: "./warning-alert.component.html",
-  styleUrls: ["./warning-alert.component.css"]
+  styleUrls: ["./warning-alert.component.css"],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class WarningAlertComponent implements OnInit {
   constructor() {}
@@ -30,10 +37,12 @@ export class WarningAlertComponent implements OnInit {
     height: number;
   }>();
 
-  onClickAddServer() {
+  onClickAddServer(nameInput) {
     //create an array and push data to it [serverElements].
+    //console.log(nameInput.value);
     this.serverCreated.emit({
-      serverName: this.newServername,
+      // serverName: this.newServername,
+      serverName: nameInput.value,
       serverContent: this.newServerContent
     });
   }
@@ -45,7 +54,8 @@ export class WarningAlertComponent implements OnInit {
       serverContent: this.newServerContent
     });
   }
-  onClickAddTestName() {
+
+  onClickAddTest() {
     this.test.emit({ name: this.testName, age: 23, height: 6 });
   }
 }
