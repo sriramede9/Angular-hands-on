@@ -42,8 +42,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ***Projecting content into components with <ng-content></ng-content>***
 
 * **<ng-content><ng-content> will project components html code to the parent,**
-* **child.html <ng-content><ng-content/>**
-* **parent.html <app-child><h2>Hello this is child html</h2><app-child/>**
+* **child.html `<ng-content><ng-content/>` projecting it's code**
+* **parent.html `<app-child><h2>Hello this is child html</h2><app-child/>`**
   
 ***Life Cycle Hooks ***
 * **OnChanges,OnInit,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewContent,OnDestroy**
