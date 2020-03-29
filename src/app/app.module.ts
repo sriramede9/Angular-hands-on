@@ -10,6 +10,7 @@ import { SuccessAlertComponent } from "./SuccessAlert/success-alert.component";
 import { FormsModule } from "@angular/forms";
 import { ReviseInlineDirectivesComponent } from './revise-inline-directives/revise-inline-directives.component';
 import { BetterHighlightDirective } from './custom_directives/better-highlight.directive';
+import { Test1Directive } from './custom_directives/test-1.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BetterHighlightDirective } from './custom_directives/better-highlight.d
     WarningAlertComponent,
     SuccessAlertComponent,
     ReviseInlineDirectivesComponent,
-    BetterHighlightDirective
+    BetterHighlightDirective,
+    Test1Directive
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
