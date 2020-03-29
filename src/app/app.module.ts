@@ -11,6 +11,7 @@ import { FormsModule } from "@angular/forms";
 import { ReviseInlineDirectivesComponent } from './revise-inline-directives/revise-inline-directives.component';
 import { BetterHighlightDirective } from './custom_directives/better-highlight.directive';
 import { Test1Directive } from './custom_directives/test-1.directive';
+import { UnlessDirective } from './revise-inline-directives/unless.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { Test1Directive } from './custom_directives/test-1.directive';
     SuccessAlertComponent,
     ReviseInlineDirectivesComponent,
     BetterHighlightDirective,
-    Test1Directive
+    Test1Directive,
+    UnlessDirective
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
