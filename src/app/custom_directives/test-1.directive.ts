@@ -1,4 +1,4 @@
-import { Directive, HostListener, HostBinding } from "@angular/core";
+import { Directive, HostListener, HostBinding, Input } from "@angular/core";
 import { ElementRef } from "@angular/core";
 import { Renderer2 } from "@angular/core";
 import { OnInit } from "@angular/core";
@@ -7,6 +7,9 @@ import { OnInit } from "@angular/core";
   selector: "[appTest1]"
 })
 export class Test1Directive implements OnInit {
+  @Input() defaultBackgroud: string = "transparent";
+  @Input() setBackgroud: string = "orange";
+
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
   @HostBinding("style.backgroundColor") bgColor: string = "transparent";
@@ -24,7 +27,7 @@ export class Test1Directive implements OnInit {
     //   "background-color",
     //   "lightgrey"
     // );
-    this.bgColor = "lightgrey";
+    this.bgColor = this.setBackgroud;
   }
   @HostListener("mouseleave") mouseleave(eventData: Event) {
     // this.renderer.setStyle(
@@ -32,6 +35,6 @@ export class Test1Directive implements OnInit {
     //   "background-color",
     //   "transparent"
     // );
-    this.bgColor = "transparent";
+    this.bgColor = this.defaultBackgroud;
   }
 }
