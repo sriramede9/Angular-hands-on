@@ -61,3 +61,10 @@ constructor(private eleRef: ElementRef, private renderer: Renderer2) {}
   ngOnInit() {
     this.renderer.setStyle(this.eleRef.nativeElement, "color", "teal");
   }`**
+* **@HostListener to capture events and add styling from directives**
+* **` @HostListener("mouseleave") mouseleave(eventData: Event) {
+    this.renderer.setStyle(
+      this.elementRef.nativeElement,
+      "background-color",
+      "transparent"
+    );`**
