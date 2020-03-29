@@ -9,6 +9,7 @@ import { WarningAlertComponent } from "./warning-alert/warning-alert.component";
 import { SuccessAlertComponent } from "./SuccessAlert/success-alert.component";
 import { FormsModule } from "@angular/forms";
 import { ReviseInlineDirectivesComponent } from './revise-inline-directives/revise-inline-directives.component';
+import { BetterHighlightDirective } from './custom_directives/better-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReviseInlineDirectivesComponent } from './revise-inline-directives/revi
     ServersComponent,
     WarningAlertComponent,
     SuccessAlertComponent,
-    ReviseInlineDirectivesComponent
+    ReviseInlineDirectivesComponent,
+    BetterHighlightDirective
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
