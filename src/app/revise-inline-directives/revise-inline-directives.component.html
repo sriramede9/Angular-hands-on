@@ -7,10 +7,24 @@
       <br /><br />
       <ul class="list-group">
         <div *ngIf="onlyOdd">
-          <li class="list-group-item" *ngFor="let item of even">{{ item }}</li>
+          <li
+            class="list-group-item"
+            [ngClass]="{ even: item == 2 }"
+            [ngStyle]="{ 'background-color': item !== 2 ? 'orange' : 'grey' }"
+            *ngFor="let item of even"
+          >
+            {{ item }}
+          </li>
         </div>
         <div *ngIf="!onlyOdd">
-          <li class="list-group-item" *ngFor="let item of odd">{{ item }}</li>
+          <li
+            class="list-group-item"
+            [ngClass]="'odd'"
+            [ngStyle]="{ 'font-weight': item == 3 ? 'bolder' : 'lighter' }"
+            *ngFor="let item of odd"
+          >
+            {{ item }}
+          </li>
         </div>
       </ul>
     </div>
