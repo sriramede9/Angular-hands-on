@@ -78,3 +78,29 @@ constructor(private eleRef: ElementRef, private renderer: Renderer2) {}
     this.bgColor = "transparent";
   }
   `**
+  
+  * **Create User Defined Structural Directives**
+* **`ng g d unless `**
+* **`<div *appUnless="onlyOdd">
+          <li
+            class="list-group-item"
+            [ngClass]="'odd'"
+            [ngStyle]="{ 'font-weight': item == 3 ? 'bolder' : 'lighter' }"
+            *ngFor="let item of odd"
+          >
+            {{ item }}
+          </li>
+        </div>`**
+ * **`export class UnlessDirective {
+  @Input() set appUnless(condition: boolean) {
+    if (!condition) {
+      this.vcRef.createEmbeddedView(this.templateRef);
+    } else {
+      this.vcRef.clear();
+    }
+  }
+  constructor(
+    private templateRef: TemplateRef<any>,
+    private vcRef: ViewContainerRef
+  ) {}
+}`**
