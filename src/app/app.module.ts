@@ -8,6 +8,7 @@ import { ServersComponent } from "./servers/servers.component";
 import { WarningAlertComponent } from "./warning-alert/warning-alert.component";
 import { SuccessAlertComponent } from "./SuccessAlert/success-alert.component";
 import { FormsModule } from "@angular/forms";
+import { ReviseInlineDirectivesComponent } from './revise-inline-directives/revise-inline-directives.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from "@angular/forms";
     ServerComponent,
     ServersComponent,
     WarningAlertComponent,
-    SuccessAlertComponent
+    SuccessAlertComponent,
+    ReviseInlineDirectivesComponent
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-warning" (click)="onlyOdd = !onlyOdd">
+        Click to toggle
+      </button>
+      <br /><br />
+      <ul class="list-group">
+        <div *ngIf="onlyOdd">
+          <li class="list-group-item" *ngFor="let item of even">{{ item }}</li>
+        </div>
+        <div *ngIf="!onlyOdd">
+          <li class="list-group-item" *ngFor="let item of odd">{{ item }}</li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
