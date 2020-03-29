@@ -53,3 +53,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * **` [ngClass]="{ even: item == 2 }"
             [ngStyle]="{ 'background-color': item !== 2 ? 'orange' : 'grey' }"
             *ngFor="let item of even"`**
+* **` ng g d better_highlight `**
+* ** `  
+//can use private define variables in constructor in ngOnInit
+constructor(private eleRef: ElementRef, private renderer: Renderer2) {}
+  //add your own styling and just use selector on tag
+  ngOnInit() {
+    this.renderer.setStyle(this.eleRef.nativeElement, "color", "teal");
+  }`**
