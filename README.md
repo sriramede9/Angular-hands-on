@@ -47,3 +47,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   
 ***Life Cycle Hooks ***
 * **OnChanges,OnInit,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewContent,OnDestroy**
+
+*** On Directives ***
+
+* **` [ngClass]="{ even: item == 2 }"
+            [ngStyle]="{ 'background-color': item !== 2 ? 'orange' : 'grey' }"
+            *ngFor="let item of even"`**
