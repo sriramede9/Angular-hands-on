@@ -9,7 +9,7 @@ import { OnInit } from "@angular/core";
 export class Test1Directive implements OnInit {
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
-  @HostBinding("style.backgroundColor") bgColor: string;
+  @HostBinding("style.backgroundColor") bgColor: string = "transparent";
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
