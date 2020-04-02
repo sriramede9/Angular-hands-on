@@ -12,6 +12,7 @@ import { ReviseInlineDirectivesComponent } from './revise-inline-directives/revi
 import { BetterHighlightDirective } from './custom_directives/better-highlight.directive';
 import { Test1Directive } from './custom_directives/test-1.directive';
 import { UnlessDirective } from './revise-inline-directives/unless.directive';
+import { Test2Directive } from './revise-inline-directives/test2.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UnlessDirective } from './revise-inline-directives/unless.directive';
     ReviseInlineDirectivesComponent,
     BetterHighlightDirective,
     Test1Directive,
-    UnlessDirective
+    UnlessDirective,
+    Test2Directive
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

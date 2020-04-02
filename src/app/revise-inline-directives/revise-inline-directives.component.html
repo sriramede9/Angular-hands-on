@@ -6,7 +6,7 @@
       </button>
       <br /><br />
       <ul class="list-group">
-        <div *ngIf="onlyOdd">
+        <!-- <div *ngIf="onlyOdd">
           <li
             class="list-group-item"
             [ngClass]="{ even: item == 2 }"
@@ -15,8 +15,8 @@
           >
             {{ item }}
           </li>
-        </div>
-        <div *appUnless="onlyOdd">
+        </div> -->
+        <!-- <div *appUnless="onlyOdd">
           <li
             class="list-group-item"
             [ngClass]="'odd'"
@@ -25,7 +25,8 @@
           >
             {{ item }}
           </li>
-        </div>
+        </div> -->
+        <p appTest2>Hello from revise-iniline-directives</p>
       </ul>
     </div>
   </div>
