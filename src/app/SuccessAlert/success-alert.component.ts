@@ -13,20 +13,23 @@ import {
 } from "@angular/core";
 //import { EventEmitter } from "protractor";
 
+import { loggingService } from "./../logging/logging.service";
 @Component({
   selector: "app-success-alert",
   templateUrl: "./success-alert.component.html",
   styleUrls: ["./success-alert.component.css"],
-  encapsulation: ViewEncapsulation.Emulated //emulated,none,native while none globally,emulated default
+  encapsulation: ViewEncapsulation.Emulated, //emulated,none,native while none globally,emulated default,
+  providers: [loggingService]
 })
 export class SuccessAlertComponent
-  implements OnInit, OnChanges, DoCheck, AfterContentInit,AfterContentChecked {
+  implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked {
   @Input() color: string[];
   @Input("servElement") element: { name: string; age: number; height: number };
 
   @Output() exampleOutput = new EventEmitter<string>();
 
   servName: string;
+  // ls = new loggingService();
 
   @Input() elementone: { type: string; name: string; content: string };
 
@@ -34,10 +37,12 @@ export class SuccessAlertComponent
 
   onClickNotify() {
     this.servName = "Hello from child!!!";
+    this.ls.testLog(this.servName);
     this.exampleOutput.emit(this.servName);
   }
-  constructor() {
-    console.log("constructor in success alert");
+  constructor(private ls: loggingService) {
+    // console.log("constructor in success alert");
+    // this.ls.testLog("from constructor");
   }
 
   ngOnInit(): void {
@@ -60,7 +65,5 @@ export class SuccessAlertComponent
     console.log("ng afterContent init Called");
   }
 
-  ngAfterContentChecked(){
-    
-  }
+  ngAfterContentChecked() {}
 }

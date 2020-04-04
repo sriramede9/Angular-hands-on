@@ -12,7 +12,8 @@ import {
   selector: "app-warning-alert",
   templateUrl: "./warning-alert.component.html",
   styleUrls: ["./warning-alert.component.css"],
-  encapsulation: ViewEncapsulation.Emulated //none,native
+  encapsulation: ViewEncapsulation.Emulated //none,native,
+  // providers:[loggingService]
 })
 export class WarningAlertComponent implements OnInit {
   constructor() {}

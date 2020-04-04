@@ -1,13 +1,18 @@
 import { Component } from "@angular/core";
+import { logging } from "protractor";
+import { loggingService } from "./logging/logging.service";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  styleUrls: ["./app.component.css"],
+  providers: [loggingService]
 })
 export class AppComponent {
   name = "Sr!";
   col: string[] = ["a", "b", "c"];
+
+  constructor(private ls: loggingService) {}
 
   ele: { type: string; name: string; content: string } = {
     type: "server",
@@ -36,6 +41,7 @@ export class AppComponent {
       name: serverData.serverName,
       content: serverData.serverContent
     });
+    console.log("pushed server to arry");
   }
   onClickAddblueprint(serverData: {
     serverName: string;
@@ -47,6 +53,7 @@ export class AppComponent {
       name: serverData.serverName,
       content: serverData.serverContent
     });
+    this.ls.testLog("pushed blueprint server to arry");
   }
 
   onClickAddTest(testData: { name: string; age: number; height: number }) {
