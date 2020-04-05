@@ -28,79 +28,48 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Topics Learned so far
 
-****Data Binding***
+\***_Data Binding_**
 
-* **@Input()**
-* **@Output()**
-* **HTML #refelement to avoid 2way binding , refelement.value**
-* **@ViewChild('ref-tag-name'):localVariable:ElementRef --> localVariable.nativeElement.value**
+- **@Input()**
+- **@Output()**
+- **HTML #refelement to avoid 2way binding , refelement.value**
+- **@ViewChild('ref-tag-name'):localVariable:ElementRef --> localVariable.nativeElement.value**
 
-***Style Encapsulation***
+**_Style Encapsulation_**
 
-* **ViewEncapsulation.[none,native,emulated] --> none will be given styling tags by angular and any style applied in this element will be applied globally,emulated is the default and native use shadow dom technology**
+- **ViewEncapsulation.[none,native,emulated] --> none will be given styling tags by angular and any style applied in this element will be applied globally,emulated is the default and native use shadow dom technology**
 
-***Projecting content into components with <ng-content></ng-content>***
+**_Projecting content into components with <ng-content></ng-content>_**
 
-* **<ng-content><ng-content> will project components html code to the parent,**
-* **child.html `<ng-content><ng-content/>` projecting it's code**
-* **parent.html `<app-child><h2>Hello this is child html</h2><app-child/>`**
-  
-***Life Cycle Hooks***
-* **OnChanges,OnInit,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewContent,OnDestroy**
+- **<ng-content><ng-content> will project components html code to the parent,**
+- **child.html `<ng-content><ng-content/>` projecting it's code**
+- **parent.html `<app-child><h2>Hello this is child html</h2><app-child/>`**
 
-***On Directives***
+**_Life Cycle Hooks_**
 
-* **` [ngClass]="{ even: item == 2 }"
-            [ngStyle]="{ 'background-color': item !== 2 ? 'orange' : 'grey' }"
-            *ngFor="let item of even"`**
-* **` ng g d better_highlight `**
-* ** `  
-//can use private define variables in constructor in ngOnInit
-constructor(private eleRef: ElementRef, private renderer: Renderer2) {}
-  //add your own styling and just use selector on tag
-  ngOnInit() {
-    this.renderer.setStyle(this.eleRef.nativeElement, "color", "teal");
-  }`**
-  
-* **@HostListener to capture events and add styling from directives**
+- **OnChanges,OnInit,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewContent,OnDestroy**
 
-* **` @HostListener("mouseleave") mouseleave(eventData: Event) {
-    this.renderer.setStyle(
-      this.elementRef.nativeElement,
-      "background-color",
-      "transparent"
-    );`**
- 
- * **@HostBinding**
-* **`  @HostBinding("style.backgroundColor") bgColor: string;
-    //usage
-  @HostListener("mouseleave") mouseleave(eventData: Event) {
-    this.bgColor = "transparent";
-  }
-  `**
-  
-  * **Create User Defined Structural Directives**
-* **`ng g d unless `**
-* **`<div *appUnless="onlyOdd">
-          <li
-            class="list-group-item"
-            [ngClass]="'odd'"
-            [ngStyle]="{ 'font-weight': item == 3 ? 'bolder' : 'lighter' }"
-            *ngFor="let item of odd"
-          >
-            {{ item }}
-          </li>
-        </div>`**
- * **`export class UnlessDirective {
-  @Input() set appUnless(condition: boolean) {
-    if (!condition) {
-      this.vcRef.createEmbeddedView(this.templateRef);
-    } else {
-      this.vcRef.clear();
-    }
-  }
-  constructor(
-    private templateRef: TemplateRef<any>,
-    private vcRef: ViewContainerRef
-  ) {}
-}`**
+**_On Directives_**
+
+- **`[ngClass]="{ even: item == 2 }" [ngStyle]="{ 'background-color': item !== 2 ? 'orange' : 'grey' }" *ngFor="let item of even"`**
+- **`ng g d better_highlight`**
+- ** `//can use private define variables in constructor in ngOnInit constructor(private eleRef: ElementRef, private renderer: Renderer2) {} //add your own styling and just use selector on tag ngOnInit() { this.renderer.setStyle(this.eleRef.nativeElement, "color", "teal"); }`**
+- **@HostListener to capture events and add styling from directives**
+
+- **`@HostListener("mouseleave") mouseleave(eventData: Event) { this.renderer.setStyle( this.elementRef.nativeElement, "background-color", "transparent" );`**
+
+- **@HostBinding**
+- **`@HostBinding("style.backgroundColor") bgColor: string; //usage @HostListener("mouseleave") mouseleave(eventData: Event) { this.bgColor = "transparent"; }`**
+
+  - **Create User Defined Structural Directives**
+
+- **`ng g d unless`**
+- **`<div *appUnless="onlyOdd"> <li class="list-group-item" [ngClass]="'odd'" [ngStyle]="{ 'font-weight': item == 3 ? 'bolder' : 'lighter' }" *ngFor="let item of odd" > {{ item }} </li> </div>`**
+- **`export class UnlessDirective { @Input() set appUnless(condition: boolean) { if (!condition) { this.vcRef.createEmbeddedView(this.templateRef); } else { this.vcRef.clear(); } } constructor( private templateRef: TemplateRef<any>, private vcRef: ViewContainerRef ) {} }`**
+
+- **Create Services**
+- _`app-module @Component({ selector: "app-root", templateUrl: "./app.component.html", styleUrls: ["./app.component.css"], providers: [loggingService, dataService] }) //in the components and //in the constructor constructor(private ls: loggingService, private ds: dataService) {} //us ds to push`_
+- _in the child of app-component to promote hierarchical-service obj_
+- - `constructor(private ls: loggingService) { } //define only in constructor,not in the provider of component section in child onClickAddServer(nameInput, contentInput) { //using ds app-level ds-service-obj here instead of emitting event this.ds.pushToServerElements({ // serverName: this.newServername, serverName: nameInput.value, serverContent: contentInput.value });`
+
+  -
