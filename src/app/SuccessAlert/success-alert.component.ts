@@ -18,8 +18,8 @@ import { loggingService } from "./../logging/logging.service";
   selector: "app-success-alert",
   templateUrl: "./success-alert.component.html",
   styleUrls: ["./success-alert.component.css"],
-  encapsulation: ViewEncapsulation.Emulated, //emulated,none,native while none globally,emulated default,
-  providers: [loggingService]
+  encapsulation: ViewEncapsulation.Emulated //emulated,none,native while none globally,emulated default,
+  // providers: [loggingService]
 })
 export class SuccessAlertComponent
   implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked {

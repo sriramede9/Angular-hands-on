@@ -2,11 +2,12 @@ import {
   Component,
   OnInit,
   EventEmitter,
-  Output,
   ViewEncapsulation,
   ViewChild,
   ElementRef
 } from "@angular/core";
+
+import { dataService } from "./../logging/app_data_service";
 
 @Component({
   selector: "app-warning-alert",
@@ -16,7 +17,7 @@ import {
   // providers:[loggingService]
 })
 export class WarningAlertComponent implements OnInit {
-  constructor() {}
+  constructor(private ds: dataService) {}
 
   ngOnInit(): void {}
 
@@ -24,28 +25,33 @@ export class WarningAlertComponent implements OnInit {
   newServerContent: string;
   testName: string;
 
-  @ViewChild("testInput") testDataInput: ElementRef;
+  // @ViewChild("testInput") testDataInput: ElementRef;
 
-  @Output() serverCreated = new EventEmitter<{
-    serverName: string;
-    serverContent: string;
-  }>();
+  // @Output() serverCreated = new EventEmitter<{
+  //   serverName: string;
+  //   serverContent: string;
+  // }>();
 
-  @Output() blueprintCreated = new EventEmitter<{
-    serverName: string;
-    serverContent: string;
-  }>();
+  // @Output() blueprintCreated = new EventEmitter<{
+  //   serverName: string;
+  //   serverContent: string;
+  // }>();
 
-  @Output() test = new EventEmitter<{
-    name: string;
-    age: number;
-    height: number;
-  }>();
+  // @Output() test = new EventEmitter<{
+  //   name: string;
+  //   age: number;
+  //   height: number;
+  // }>();
 
   onClickAddServer(nameInput, contentInput) {
     //create an array and push data to it [serverElements].
     //console.log(nameInput.value);
-    this.serverCreated.emit({
+    // this.serverCreated.emit({
+    //   // serverName: this.newServername,
+    //   serverName: nameInput.value,
+    //   serverContent: contentInput.value
+    // });
+    this.ds.pushToServerElements({
       // serverName: this.newServername,
       serverName: nameInput.value,
       serverContent: contentInput.value
@@ -54,15 +60,20 @@ export class WarningAlertComponent implements OnInit {
 
   onClickAddblueprint(contentInput, nameInput) {
     //create an array and push data to it [serverElements].
-    this.blueprintCreated.emit({
+    // this.blueprintCreated.emit({
+    //   serverName: nameInput.value,
+    //   // serverContent: this.newServerContent
+    //   serverContent: contentInput.value
+    // });
+    this.ds.pushToServerElements({
+      // serverName: this.newServername,
       serverName: nameInput.value,
-      // serverContent: this.newServerContent
       serverContent: contentInput.value
     });
   }
 
-  onClickAddTest() {
-    // this.test.emit({ name: this.testName, age: 23, height: 6 });
-    console.log(this.testDataInput.nativeElement.value);
-  }
+  // onClickAddTest() {
+  //   // this.test.emit({ name: this.testName, age: 23, height: 6 });
+  //   console.log(this.testDataInput.nativeElement.value);
+  // }
 }
