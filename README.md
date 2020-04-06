@@ -72,4 +72,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - _in the child of app-component to promote hierarchical-service obj_
 - - `constructor(private ls: loggingService) { } //define only in constructor,not in the provider of component section in child onClickAddServer(nameInput, contentInput) { //using ds app-level ds-service-obj here instead of emitting event this.ds.pushToServerElements({ // serverName: this.newServername, serverName: nameInput.value, serverContent: contentInput.value });`
 
-  -
+  - **@Injectable() from @angular/core**
+
+  * _If app-module providers array is mentioned with the service we would like to use globally_
+  * _i) providers[test_log_services]_
+  * _ii) if we are sending any data to service make sure to use @Injectable() on the service class_
+  * _iii) we do not need @injectable() it was only a logging service_
+  * _iv)we do not have to define again in child components providers array,can define in constructor and use the service_

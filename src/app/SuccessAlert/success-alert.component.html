@@ -15,11 +15,14 @@
   <div class="panel-body">
     <ng-content> </ng-content>
 
-    <p>
-      <strong
-        >This is our Input() data which I received from Parent -->
-        {{ getFromParent }}
-      </strong>
-    </p>
+    <!-- <p> -->
+    <!-- <strong -->
+    <!-- >This is our Input() data which I received from Parent -->
+    <!-- {{ getFromParent }} -->
+    <!-- </strong> -->
+    <!-- </p> -->
+    <ul *ngFor="let item of initarray" >
+      <li>{{item}}</li>
+    </ul>
   </div>
 </div>

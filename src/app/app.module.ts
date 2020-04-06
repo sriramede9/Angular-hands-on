@@ -8,11 +8,12 @@ import { ServersComponent } from "./servers/servers.component";
 import { WarningAlertComponent } from "./warning-alert/warning-alert.component";
 import { SuccessAlertComponent } from "./SuccessAlert/success-alert.component";
 import { FormsModule } from "@angular/forms";
-import { ReviseInlineDirectivesComponent } from './revise-inline-directives/revise-inline-directives.component';
-import { BetterHighlightDirective } from './custom_directives/better-highlight.directive';
-import { Test1Directive } from './custom_directives/test-1.directive';
-import { UnlessDirective } from './revise-inline-directives/unless.directive';
-import { Test2Directive } from './revise-inline-directives/test2.directive';
+import { ReviseInlineDirectivesComponent } from "./revise-inline-directives/revise-inline-directives.component";
+import { BetterHighlightDirective } from "./custom_directives/better-highlight.directive";
+import { Test1Directive } from "./custom_directives/test-1.directive";
+import { UnlessDirective } from "./revise-inline-directives/unless.directive";
+import { Test2Directive } from "./revise-inline-directives/test2.directive";
+import { testloggingservices } from "./logging/test_logging_services";
 
 @NgModule({
   declarations: [
@@ -25,10 +26,10 @@ import { Test2Directive } from './revise-inline-directives/test2.directive';
     BetterHighlightDirective,
     Test1Directive,
     UnlessDirective,
-    Test2Directive
+    Test2Directive,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [testloggingservices],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

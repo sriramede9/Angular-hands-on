@@ -9,16 +9,17 @@ import {
   SimpleChanges,
   DoCheck,
   AfterContentInit,
-  AfterContentChecked
+  AfterContentChecked,
 } from "@angular/core";
 //import { EventEmitter } from "protractor";
 
 import { loggingService } from "./../logging/logging.service";
+import { testloggingservices } from "./../logging/test_logging_services";
 @Component({
   selector: "app-success-alert",
   templateUrl: "./success-alert.component.html",
   styleUrls: ["./success-alert.component.css"],
-  encapsulation: ViewEncapsulation.Emulated //emulated,none,native while none globally,emulated default,
+  encapsulation: ViewEncapsulation.Emulated, //emulated,none,native while none globally,emulated default,
   // providers: [loggingService]
 })
 export class SuccessAlertComponent
@@ -40,15 +41,19 @@ export class SuccessAlertComponent
     this.ls.testLog(this.servName);
     this.exampleOutput.emit(this.servName);
   }
-  constructor(private ls: loggingService) {
+  constructor(private ls: loggingService, private ts: testloggingservices) {
     // console.log("constructor in success alert");
     // this.ls.testLog("from constructor");
   }
 
+  initarray: string[] = [];
+
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    console.log("ng on Init working");
+    //console.log("ng on Init working");
+    this.ts.pushthis("ng on Init in success alert");
+    this.initarray = this.ts.names;
   }
 
   ngOnChanges(changes: SimpleChanges) {
